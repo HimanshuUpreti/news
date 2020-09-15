@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0;font-family: Roboto, "Helvetica Neue", sans-serif; }
+* {
+    margin: 0;
+    padding:0;
+}
+@media (max-width:500px){
+    .logo{
+      display:none;
+    }
+  }
+.isValid {
+    border: none;
+    border-bottom:2px solid coral;
+}
+.isNotValid {
+    border: none;
+    border-bottom:2px solid rgba(0, 213, 241, 0.664);
+}
+.form {
+    font-size: 1.5rem;
+    text-align: center;
+}
+.textBox {
+    width: 80%;
+    height:30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+label {
+    margin:5%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.clicked {
+    background-color: rgba(29, 29, 99, 0.815);
+}

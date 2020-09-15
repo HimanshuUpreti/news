@@ -1,0 +1,77 @@
+
+
+<div>
+<label for="">Sign in</label>
+<button btn-primary><span><i class="fab fa-facebook-square"></i></span>Login with Facebook</button>
+<button><span><i class="fab fa-google-plus-square"></i></span>Login with Google</button>
+<button><span><i class="fab fa-twitter-square"></i></span>Login with Twitter</button> 
+</div>
+
+
+<!-- <div *ngIf="login">
+
+    <h2 >Login</h2>
+    <div class="error1" *ngIf="error"><h2>Invalid Credentials</h2></div>
+    <form action="/">
+        <div class="form-group">
+        <label for="email">Name</label>
+        <input [ngClass]="{'isValid':error}" type="text" class="form-control" [(ngModel)]="credentials.name" id="name" placeholder="Enter name" name="name">
+        </div>
+        <div class="form-group">
+        <label for="pwd">Password</label>
+        <input [ngClass]="{'isValid':error}" type="password" class="form-control" [(ngModel)]="credentials.password" id="pwd" placeholder="Enter password" name="pwd">
+        </div>
+        <div *ngIf="(credentials.name&&credentials.password)">
+            <button type="submit" (click)="loginVerify()" class="btn btn-success">Submit</button>
+        </div>
+        </form>
+</div> -->
+
+
+<!--Chat Box-->
+<div class="row">
+        <!-- P -->
+        <div *ngIf="show1">
+        <h2>Welcome User1</h2>
+        <input type="text" [(ngModel)]="itemValue.message">
+        <button (click)="submitUser1()" [disabled]="!itemValue.message" class ="btn btn-success">Send</button>
+        <div *ngFor="let data1 of items | async">
+                <div class="user2" *ngIf="data1.content.name == 'User1';else user1msg">
+                         {{data1.content.message}}
+                </div>
+                <ng-template style="color:black;background-color: rgba(190, 247, 84, 0.911);" #user1msg>
+                        <b>{{data1.content.name}}</b> : {{data1.content.message}}
+                </ng-template>
+        </div>
+        </div>
+
+        <!-- P End-->
+        
+        <!-- H -->
+        <div *ngIf="show2">
+        <h2>Welcome User2</h2>
+        <input type="text" [(ngModel)]="itemValue.message">
+        <button (click)="submitUser2()" class ="btn btn-success" [disabled]="!itemValue.message">Send</button>
+        <div *ngFor="let data1 of items | async">
+                <div class="user2" *ngIf="data1.content.name == 'User2';else user1msg">
+                         {{data1.content.message}}
+                </div>
+                <ng-template style="color:black;background-color: rgba(190, 247, 84, 0.911);" #user1msg>
+                        <b>{{data1.content.name}}</b> : {{data1.content.message}}
+                </ng-template>         
+        </div>
+        <!-- H End -->
+        </div>
+        <!--Chat Box Ends-->
+
+
+       
+<!-- <form action="">
+        <div class="drop" *ngFor="let item of dropdownList">
+               {{item.itemName}} <div style=""><input type="checkbox" name={{item.itemName}}
+               [value] ="item.itemName"> </div>
+        </div>
+</form> -->
+        
+
+        

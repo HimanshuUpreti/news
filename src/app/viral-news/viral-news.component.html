@@ -1,0 +1,13 @@
+<div *ngFor="let data of itemData; let i = index">
+    <div class="card"  style="width: 90%;margin:1% auto;">
+      
+    <h3 class="card-title"><b>{{i+1}} - {{data.content.heading}}</b></h3>
+    <img class="card-img-top" [src]="data.content.url" alt="Card image cap">
+    <div class="card-body"> 
+      <p class="card-title" style="color:black;">{{data.content.description}}</p>
+    </div>
+    <button *ngIf="showDelete" (click)="deleteRecord(i)" class="btn btn-danger">Delete</button>
+  </div>
+  <div class="row"></div>
+</div>
+

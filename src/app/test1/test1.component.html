@@ -1,0 +1,13 @@
+
+<div class="{{className}}">
+<div class="display">
+<input type="text" style="color:green" [(ngModel)]="city">
+<button class="btn btn-outline-success" (click) = "getdata()">Get Temperature</button><br>
+<div *ngIf="loader; else elseBlock" class="load1"></div>
+<ng-template #elseBlock>City : {{citydata.name}}<br />
+    Temperature : {{citydata.temp}} &deg;C<br />
+    Wind : {{citydata.wind}} km/hr<br />
+    Description : {{citydata.description}}
+</ng-template>
+</div>
+</div>

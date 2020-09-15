@@ -1,0 +1,37 @@
+<br>
+<div>
+  <button class="btn btn-primary" (click)="getdata('in',1)">India</button>
+  <button class="btn btn-primary" (click)="getdata('us',1)">U.S.A</button>
+  <button class="btn btn-primary"(click)="getdata('cn',1)">China</button>
+  <button class="btn btn-primary" (click)="getdata('it',1)">Italy</button>
+  <button class="btn btn-primary" (click)="getdata('jp',1)">Japan</button>
+</div>
+<br/>
+<!-- Search with any keyword -->
+<div style="float:right">
+  <input type="text" style="height:30px" [(ngModel)]="keyword">
+  <!--Search button-->
+  <button (click)="getdata2()">
+    <svg class="bi bi-search" width="1.4em" height="1.4em" viewBox="0 0 16 16" fill="red" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+      <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+    </svg>
+  </button>
+</div><br>
+
+<div style="color:black;box-shadow: 1px 2px 4px 4px cornflowerblue;" *ngFor = "let i of this.news">
+  <div class="news">
+    <div class="title">
+        {{i.title}}
+    </div>
+    <div class="image">
+      <img style="margin:auto;" width="50%" height="80%" src="{{i.urlToImage}}" alt="">
+    </div>
+    <div class="discription">
+      <b>For more details :</b> <a class="btn btn-primary" href="{{i.url}}">Go To</a>
+    </div>
+  </div>
+</div>
+
+<button class="btn btn-primary" (click)="previousPage()">Previous Page</button>
+<button class="btn btn-primary" (click)="nextPage()">Next Page</button>
